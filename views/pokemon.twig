@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+		<link rel="stylesheet" href="/css/style.css">
+		<title>Projet Pokedex</title>
+	</head>
+	<body>
+		<header>
+			<h1>Ajout de pokemon</h1>
+		</header>
+		<nav class="navbar navbar-expand-lg">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Navbar</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="/subscribe">Inscription</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/login">Connexion</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="/page">Liste pokemons</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="#">Ajout pokemons</a>
+						</li>
+					</li</ul>
+				</div>
+			</div>
+		</nav>
+		<main>
+			<form method="post" {% if action == "update" %} action="/updatePokemon/{{pokemon.id}}"{% else %} action="addPokemon" {% endif %}>
+				<div class="mb-3 offset-4 col-4 ">
+					<label for="name" class="form-label">Name du Pokemon</label>
+					<select class="type" name="name" value = {{pokemon.name}}>
+						<option>Choisissez le nom</option>
+						<option {% if pokemon.name == "salameche" %}selected{% endif %} value="salameche">Salameche</option>
+						<option {% if pokemon.name == "reptincel" %}selected{% endif %} value="reptincel">Reptincel</option>
+						<option {% if pokemon.name == "charmeleon" %}selected{% endif %} value="charmeleon">Charmeleon</option>
+						<option {% if pokemon.name == "florizzare" %}selected{% endif %} value="florizzare">Florizzare</option>
+						<option  {% if pokemon.name == "herbzzare" %}selected{% endif %}  value="herbizzare">Herbizzare</option>
+						<option  {% if pokemon.name == "bulbizzare" %}selected{% endif %} value="bulbizzare">Bulbizzare</option>
+						<option  {% if pokemon.name == "mega-venusaur" %}selected{% endif %} value="mega-venusaur">Mega-Venusaur</option>
+						<option  {% if pokemon.name == "carapuce" %}selected{% endif %} value="carapuce">Carapuce</option>
+						<option  {% if pokemon.name == "carabaffe" %}selected{% endif %} value="carabaffe">Carabaffe</option>
+						<option  {% if pokemon.name == "chenipan" %}selected{% endif %} value="chenipan">Chenipan</option>
+						<option  {% if pokemon.name == "chrysacier" %}selected{% endif %} value="chrysacier">Chrysacier</option>
+						<option  {% if pokemon.name == "roucarnage" %}selected{% endif %} value="roucarnage">Roucarnage</option>
+						<option  {% if pokemon.name == "dragon-feu" %}selected{% endif %} value="dragon-feu">Dragon-de-Feu</option>
+						<option  {% if pokemon.name == "picatchu" %}selected{% endif %} value="picatchu">Picatchu</option>
+						<option  {% if pokemon.name == "lucas" %}selected{% endif %} value="lucas">Lucas</option>
+						<option  {% if pokemon.name == "steph" %}selected{% endif %} value="steph">Stephane</option>
+						<option  {% if pokemon.name == "ryan" %}selected{% endif %} value="ryan">Ryan</option>
+						<option  {% if pokemon.name == "alexis" %}selected{% endif %} value="alexis">Alexis</option>
+						<option  {% if pokemon.name == "maeva" %}selected{% endif %} value="maeva">Maeva</option>
+						<option  {% if pokemon.name == "camille" %}selected{% endif %} value="camille">Camille</option>
+						<option  {% if pokemon.name == "oceane" %}selected{% endif %} value="oceane">Oceane</option>
+						<option  {% if pokemon.name == "loukas" %}selected{% endif %} value="loukas">Loukas</option>
+						<option  {% if pokemon.name == "laure" %}selected{% endif %} value="laure">Laure</option>
+						<option  {% if pokemon.name == "robert" %}selected{% endif %} value="robert">Robert</option>
+						<option  {% if pokemon.name == "adri" %}selected{% endif %} value="adri">Adri</option>
+					</select>
+				</div>
+				<div class="mb-3 offset-4 col-4 ">
+					<label for="type" class="form-label">Talent du Pokemon</label>
+					<select class="type" name="type" value = "feu">
+						<option>Choisissez un talent</option>
+						<option {% if pokemon.type == "feu" %}selected{% endif %} value="feu">Feu</option>
+						<option{% if pokemon.type == "plante" %}selected{% endif %} value="plante">Plante</option>
+						<option {% if pokemon.type == "eau" %}selected{% endif %} value="eau">Eau</option>
+						<option {% if pokemon.type == "vaccin" %}selected{% endif %} value="vaccin">Vaccin</option>
+						<option {% if pokemon.type == "ventouse" %}selected{% endif %} value="ventouse">Ventouse</option>
+						<option {% if pokemon.type == "torche" %}selected{% endif %} value="torche">Torche</option>
+						<option {% if pokemon.type == "insomnia" %}selected{% endif %} value="insomnia">Insomnia</option>
+						<option {% if pokemon.type == "serenite" %}selected{% endif %} value="serenite">Sérénité</option>
+						<option {% if pokemon.type == "paratonnerre" %}selected{% endif %} value="paratonnerre">Paratonnerre</option>
+						<option {% if pokemon.type == "fuite" %}selected{% endif %}  value="fuite">Fuite</option>
+						<option {% if pokemon.type == "armumagma" %}selected{% endif %} value="armumagma">Armumagma</option>
+						<option {% if pokemon.type == "ramassage" %}selected{% endif %} value="ramassage">Ramassage</option>
+						<option {% if pokemon.type == "ignifuge" %}selected{% endif %} value="ignifuge">Ignifugé</option>
+						<option {% if pokemon.type == "essaim" %}selected{% endif %} value="essaim">Essaim</option>
+						<option {% if pokemon.type == "impassible" %}selected{% endif %} value="impassible">Impassible</option>
+						<option {% if pokemon.type == "flame" %}selected{% endif %} value="flame">Flame</option>
+					</select>
+				</div>
+				<div class="niveau mb-3 offset-4 col-4 ">
+					<label for="niveau" class="form-label">Niveau du Pokemon</label>
+					<input type="number" class="form-control" name="level" id="niveau" value="{{pokemon.level}}">
+				</div>
+
+				<div>
+					<input type="submit" class="lien btn btn-danger text-dark" value="Submit">
+				</div>
+			</form>
+			<!-- Button trigger modal -->
+		</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+	</body>
+</html>

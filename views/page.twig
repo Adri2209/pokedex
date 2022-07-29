@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+		<link rel="stylesheet" href="/css/style.css">
+		<title>Projet Pokedex</title>
+	</head>
+	<body>
+		<header>
+			<h1>LISTE POKEMONS</h1>
+		</header>
+		<nav class="navbar navbar-expand-lg">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Navbar</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="/subscribe">Inscription</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/login">Connexion</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Liste pokemons</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/addPokemon">Ajout pokemons</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link offset-12" href="/destroyPokemon">Déconnection</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<main class="container text-center">
+			<section class="row mx-auto">
+				<a class="pokemon text-center" href="/addPokemon">Ajouter un Nouveau PokeMoN</a>
+				{% if pokemons|length == 0 %}
+					{% else %}
+						{% for pokemon in pokemons %}
+							<div class="card col-4 offset-6 m-4 mx-auto" style="width: 18rem;">
+								<img class="card-img-top" src="/images/{{pokemon.name}}.jpg" alt="Card image cap">
+								<div class="card-body">
+									<h5 class="card-title">{{pokemon.name}}</h5>
+									<p class="card-text">{{pokemon.level}}</p>
+									<p class="card-text">{{pokemon.type}}</p>
+									<button type="button" class="btn btn-danger" data-bs-pokeId = {{pokemon.id}} data-bs-pokeName = {{pokemon.name}} data-bs-toggle="modal" data-bs-target="#exampleModal">
+										Supprimer
+									</button>
+									<a href="/updatePokemon/{{pokemon.id}}" class="btn btn-primary">Modifier</a>
+								</div>
+								<!-- Modal -->
+							</div>
+							<!--FIN DU MODAL -->
+						{% endfor %}
+				{% endif %}
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="pokeName" style="text-align-center"></h5>
+							</div>
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+							<a id="modalLink" class="btn btn-danger">Oui</a>
+						</div>
+					</div>
+				</div>
+			
+			</section>
+		</main>
+		<script src="/js/index.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+	</body>
+</html>

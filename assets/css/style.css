@@ -1,0 +1,53 @@
+html{
+    background-image: url(../images/pokemon.jpg);
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+}
+
+body{
+    text-align: center;
+    background-color: transparent !important; 
+    font-weight: bold;
+}
+.type{
+    font-size: large;
+    border: 3px solid black ;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+.form-label{
+    font-size: x-large;
+    font-weight: bold;
+}
+.niveau{
+    margin-top: 30px;
+    font-size: x-large;
+    font-weight: bold;
+}
+.form-control{
+    border: 3px solid black ;
+    border-radius: 20px;
+}
+.lien{
+    border: 3px solid black ;
+    font-weight: bold;
+    border-radius: 20px;
+}
+.card{
+    padding-top: 10px;
+    border-radius: 30px;
+    background-color: aqua;
+}
+.btn{
+    border-radius: 30px;
+}
+.mb-3{
+    padding-top: 50px;
+}
+
+.pokemon{
+    color: maroon;
+}
